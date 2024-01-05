@@ -1,0 +1,114 @@
+/*
+--- Layout ---
+Mobile: 375px
+Desktop: 1440px
+
+--- Typography ---
+Font size: 15px
+
+--- Font ---
+Family: [Lexend Deca](https://fonts.google.com/specimen/Lexend+Deca)
+Weights: 400
+Family: [Big Shoulders Display](https://fonts.google.com/specimen/Big+Shoulders+Display)
+Weights: 700
+*/
+
+/* Root Variable */
+:root {
+  /* --- Primary --- */
+  --clr-Bright-orange: hsl(31, 77%, 52%);
+  --clr-Dark-cyan: hsl(184, 100%, 22%);
+  --clr-Very-dark-cyan: hsl(179, 100%, 13%);
+  /* --- Neutral --- */
+  --clr-Transparent-white: hsla(0, 0%, 100%, 0.75);
+  --clr-Very-light-gray: hsl(0, 0%, 95%);
+
+}
+/* Custom Fonts */
+@font-face {
+  font-family: 'LexendDeca';
+  src:
+    url('../fonts/Lexend_Deca/LexendDeca-VariableFont_wght.ttf')
+    format('truetype');
+}
+@font-face {
+  font-family: 'BigShoulders';
+  font-weight: 700;
+  src:
+    url('../fonts/Big_Shoulders_Display/BigShouldersDisplay-VariableFont_wght.ttf')
+    format('truetype');
+}
+/* Styling */
+html {
+  font-size: 15px;
+}
+body {
+  width: 100dvw;
+  height: 100dvh;
+  padding: 1.6rem;
+  display: grid;
+  place-content: center;
+  background-color: var(--clr-Very-light-gray);
+}
+main {
+  display: grid;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+[class$='sedans'] {
+  --_current-color: var(--clr-Bright-orange);
+}
+[class$='suvs'] {
+  --_current-color: var(--clr-Dark-cyan);
+}
+[class$='luxury'] {
+  --_current-color: var(--clr-Very-dark-cyan);
+}
+[class^='grid--wrapper'] {
+  padding: 3.2em 3.25rem;
+  background-color: var(--_current-color);
+}
+[class^='grid--wrapper'] > img {
+  margin-bottom: 2.3rem;
+}
+[class^='grid--wrapper'] h1 {
+  font: 2.65rem 'BigShoulders', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 1.7rem;
+  color: var(--clr-Very-light-gray);
+}
+[class^='grid--wrapper'] p {
+  font: 1rem/1.67 'LexendDeca', sans-serif;
+  margin-bottom: 1.6rem;
+  color: var(--clr-Transparent-white);
+}
+[class^='grid--wrapper'] a {
+  max-width: max-content;
+  font-family: 'LexendDeca', sans-serif;
+  padding: 1em 2.1em;
+  background-color: var(--clr-Very-light-gray);
+  color: var(--_current-color);
+  border-radius: 2em;
+  display: block;
+}
+aside {
+  position: absolute;
+  inset: auto 0 5rem 0;
+  text-align: center;
+}
+
+@media (min-width: 800px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 61.4rem;
+    margin-top: 42px;
+  }
+  [class^='grid--wrapper'] p {
+    margin-bottom: 5.5rem;
+  }
+  [class^='grid--wrapper'] a {
+    padding: 0.95em 2.1em 1em;
+  }
+
+}
+

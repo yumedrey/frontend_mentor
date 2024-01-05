@@ -1,0 +1,181 @@
+/*
+- Mobile: 375px
+- Desktop: 1440px
+
+--- Font
+- Font size (paragraph): 15px
+- Family: [Overpass](https://fonts.google.com/specimen/Overpass)
+- Weights: 400, 700
+*/
+
+:root {
+  /* --- Primary --- */
+  --colour-Orange: hsl(25, 97%, 53%);
+  /* --- Neutral --- */
+  --colour-White: hsl(0, 0%, 100%);
+  --colour-Light-Grey: hsl(217, 12%, 63%);
+  --colour-Medium-Grey: hsl(216, 12%, 54%);
+  --colour-Dark-Blue: hsl(213, 19%, 18%);
+  --colour-Very-Dark-Blue: hsl(216, 12%, 8%);
+}
+
+@font-face {
+  font-family: "Overpass";
+  src: url("../assets/Overpass/Overpass-VariableFont_wght.ttf");
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  padding-inline: 24px 24px;
+  font-family: "Overpass";
+  background-color: var(--colour-Very-Dark-Blue);
+}
+main {
+  min-width: 300px;
+  max-width: 412px;
+  border-radius: 20px;
+  padding: 24px;
+  padding-bottom: 32px;
+  padding-right: 22px;
+  color: var(--colour-White);
+  background-image: linear-gradient(to bottom, #212832, #1a1e27);
+}
+.main--star-icon {
+  width: 40px;
+  aspect-ratio: 1;
+  background-color: var(--colour-Dark-Blue);
+  border-radius: 50%;
+  display: grid;
+  place-content:center;
+  padding: 14px;
+  margin-bottom: 20px;
+}
+main.done {
+  text-align: center;
+}
+main.done .main--star-icon {
+  width: 100%;
+  background-color: transparent;
+  aspect-ratio: 0;
+}
+main.done .main--star-icon img {
+  margin-bottom: 1.5rem;
+  margin-inline: auto;
+}
+main:not(.done) .main--result {
+  display: none
+}
+.main--result {
+  color: var(--colour-Orange);
+  border-radius: 20px;
+  background-color: var(--colour-Dark-Blue);
+  padding: 10px 1rem;
+  color: #c77232;
+}
+main h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 11px;
+}
+main p {
+  font-size: 15px;
+  letter-spacing: -0.47px;
+  line-height: 1.48;
+  margin-bottom: 26px;
+  color: var(--colour-Light-Grey)
+}
+main [type="radio"] {
+  display: none;
+}
+main.done form {
+  display: none;
+}
+
+.form--input {
+  display: flex;
+  width: 100%;
+  column-gap: 17px;
+  margin-bottom: 24px;
+}
+form label {
+  flex: 1;
+  aspect-ratio: 1;
+  background-color: var(--colour-Dark-Blue);
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  color: var(--colour-Light-Grey);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+}
+form label:hover {
+  background-color: var(--colour-Orange);
+  color: var(--colour-White);
+}
+form input:checked + label {
+  background-color: var(--colour-Light-Grey);
+  color: var(--white);
+}
+.form--submit {
+  padding-right: 2px;
+}
+form #btn-submit {
+  background-color: var(--colour-Orange);
+  width: 100%;
+  text-align: center;
+  padding-block: 15px 12px;
+  border-radius: 25px;
+  color: var(--colour-White);
+  font-size: 14px;
+  letter-spacing: 2.0px;
+  font-weight: 600;
+}
+form #btn-submit:hover {
+  background-color: var(--colour-White);
+  color: var(--colour-Orange);
+  cursor: pointer;
+}
+
+@media (min-width: 720px) {
+  main {
+    padding: 32px;
+    padding-right: 38px;
+    padding-bottom: 32px;
+    padding-top: 32px;
+    margin-top: 8px;
+    border-radius: 30px;
+  }
+  .main--star-icon {
+    width: 48px;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+  main h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  main p {
+    letter-spacing: 0px;
+    line-height: 1.6;
+    margin-bottom: 27px;
+  }
+  .form--input {
+    display: flex;
+    width: 100%;
+    column-gap: 22px;
+    margin-bottom: 32px;
+  }
+  form label {
+    place-content: center;
+    font-size: 16px;
+  }
+  form #btn-submit {
+    font-size: 15px;
+    letter-spacing: 1.9px;
+    padding-block: 15px 11px;
+  }
+}

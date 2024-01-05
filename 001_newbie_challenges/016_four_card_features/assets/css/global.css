@@ -1,0 +1,152 @@
+/*
+--- Layout ---
+Mobile: 375px
+Desktop: 1440px
+
+--- Typography ---
+Font size: 15px
+Family: [Poppins](https://fonts.google.com/specimen/Poppins)
+Weights: 200, 400, 600
+*/
+:root {
+  /* --- Primary --- */
+  --clr-Red: hsl(0, 78%, 62%);
+  --clr-Cyan: hsl(180, 62%, 55%);
+  --clr-Orange: hsl(34, 97%, 64%);
+  --clr-Blue: hsl(212, 86%, 64%);
+  /* --- Neutral --- */
+  --clr-Very-Dark-Blue: hsl(234, 12%, 34%);
+  --clr-Grayish-Blue: hsl(229, 6%, 66%);
+  --clr-Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+body {
+  padding-block: 5.55em;
+  font: 15px 'Poppins', sans-serif;
+  width: 100vw;
+  background-color: var(--clr-Very-Light-Gray);
+  padding-inline: 2rem;
+}
+
+header {
+  font-size: 1.62em;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 2.7rem;
+  color: var(--clr-Very-Dark-Blue);
+}
+header h1 {
+  font-weight: 600;
+  margin-bottom: 0.7em;
+  color: var(--clr-Very-Dark-Blue);
+}
+header p {
+  font-size: 0.62em;
+  line-height: 1.65;
+  font-weight: 400;
+  color: var(--clr-Grayish-Blue);
+}
+main {
+  display: grid;
+  padding-block: 2rem;
+  gap: 1.5rem;
+}
+section {
+  --_color: var(--clr-Cyan);
+  border-top: 3.5px solid var(--_color);
+  padding: 1.45rem 1.75rem 1.8rem;
+  border-radius: 0.5em;
+  background-color: #fff;
+  box-shadow: 0px 12px 12px 4px hsla(212, 86%, 64%, .15);
+}
+section:nth-child(2) {
+  --_color: var(--clr-Red);
+}
+section:nth-child(3) {
+  --_color: var(--clr-Orange);
+}
+section:last-child {
+  --_color: var(--clr-Blue);
+}
+section h2 {
+  font-size: 1.33em;
+  font-weight: 600;
+  margin-bottom: 0.1em;
+  color: var(--clr-Very-Dark-Blue);
+}
+section 
+}
+section h2 {
+  font-size: 1.33em;
+  font-weight: 600;
+  margin-bottom: 0.1em;
+  color: var(--clr-Very-Dark-Blue);
+}
+section p {
+  color: var(--clr-Grayish-Blue);
+  padding-inline: 1px;
+  font-size: 0.88em;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+section img {
+  margin-left: auto;
+  max-width: 3.5rem;
+}
+
+@media (width > 800px) {
+  body {
+    padding-inline: 1rem;
+    display: gird;
+    place-content: center;
+  }
+  header {
+    font-size: 2.43em;
+    line-height: 1.4;
+    max-width: 32rem;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+  }
+  header h1 {
+    margin-bottom: 0.47em;
+  }
+  header p {
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: -0.1px;
+  }
+  main {
+    margin-inline: auto;
+    max-width: 1109px;
+    align-items: center;
+    column-gap: 1.9rem;
+    row-gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      'a b d'
+      'a c d';
+  }
+  section:first-child { grid-area: a; }
+  section:nth-child(2) { grid-area: b; }
+  section:nth-child(3) { grid-area: c; }
+  section:last-child { grid-area: d; }
+
+  section {
+    padding: 1.7rem 1.97rem 1.95rem;
+    width: 1fr;
+  }
+  section h2 {
+    margin-bottom: 0.4em;
+    font-size: 1.24rem;
+  }
+  section p {
+    margin-bottom: 2.4rem;
+    line-height: 1.77;
+    font-size: 0.82rem;
+  }
+  section img {
+    max-width: none;
+  }
+}

@@ -1,0 +1,155 @@
+/*
+--- Layout ---
+  Mobile: 375px
+  Desktop: 1440px
+
+--- Typography ---
+  Font size: 16px
+  Family: [Karla](https://fonts.google.com/specimen/Karla)
+  Weights: 400, 700
+*/
+
+:root {
+  /* --- Primary --- */
+  --clr-Bright-Yellow: hsl(71, 73%, 54%);
+  --clr-Cyan: hsl(179, 62%, 43%);
+  --clr-Bright-Cyan: hsl(179, 47%, 52%);
+  /* --- Neutral -- */
+  --clr-Light-Gray: hsl(204, 43%, 93%);
+  --clr-Light-Gray-price: hsl(255, 100%, 100%, .7);
+  --clr-Grayish-Blue: hsl(218, 22%, 67%);
+}
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 4.5rem 2.0rem;
+  font-family: 'Karla', sans-serif;
+  background-color: var(--clr-Light-Gray);
+}
+main {
+  border-radius: 0.35rem;
+  overflow: hidden;
+  box-shadow: 0px 16px 32px 0px hsl(218, 47%, 67%, .35);
+}
+.community {
+  padding: 1.75rem 1.5rem 2rem;
+  background-color: #fff;
+}
+.community h1 {
+  font-weight: 700;
+  font-size: 1.225rem;
+  margin-bottom: 1.5rem;
+  color: var(--clr-Cyan);
+}
+.community h2 {
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+  margin-bottom: 1rem;
+  color: var(--clr-Bright-Yellow);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.community p {
+  font-size: 0.855rem;
+  line-height: 1.9;
+  color: var(--clr-Grayish-Blue);
+}
+
+.subscribe {
+  color: #fff;
+  padding: 1.55rem 1.5rem 1.5rem;
+  background-color: var(--clr-Cyan);
+}
+.subscribe h1 {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1.1rem;
+}
+.subscribe--price {
+  font-weight: 700;
+  font-size: 1.97rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.subscribe--price em {
+  font-weight: 300;
+  font-size: 1rem;
+  margin-left: 0.75rem;
+  color: var(--clr-Light-Gray-price);
+}
+.subscribe p {
+  font-size: 0.976rem;
+  margin-bottom: 1.85rem;
+  color: var(--clr-Light-Gray);
+}
+.subscribe a {
+  padding-block: 1.05em 0.9em;
+  background-color: pink;
+  display: block;
+  text-align: center;
+  background-color: var(--clr-Bright-Yellow);
+  color: #fff;
+  box-shadow: 0px 11px 15px -4px rgba(0, 0, 0, .15);
+  border-radius: 0.3em;
+  font-weight: 700;
+  font-size: 0.97rem;
+}
+
+.advantages {
+  padding: 1.53rem 1.5rem 1.6rem;
+  color: #fff;
+  background-color: var(--clr-Bright-Cyan);
+}
+.advantages h1 {
+  font-weight: 700;
+  font-size: 1.11rem;
+  margin-bottom: 1.25rem;
+}
+.advantages--list {
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.857rem;
+  color: var(--clr-Light-Gray);
+}
+
+@media (width > 600px) {
+  body {
+    display: grid;
+    place-content:center;
+  }
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1Fr;
+    max-width: 635px;
+    border-radius: 0.5rem;
+  }
+  .community {
+    grid-column: span 2;
+    padding: 2.50rem 2.54rem;
+  }
+  .community h1 {
+    font-size: 1.466rem;
+    margin-bottom: 1.45rem;
+  }
+  .community h2 {
+    font-size: 1.133rem;
+    margin-bottom: 0.6rem;
+  }
+  .community p {
+    font-size: 0.977rem;
+    line-height: 1.65;
+  }
+
+  .subscribe {
+    padding: 2.5rem 2.53rem 2.4rem;
+  }
+  .subscribe p {
+    margin-bottom: 1.9rem;
+  }
+  .advantages {
+    padding: 2.5rem 2.5rem;
+  }
+
+}

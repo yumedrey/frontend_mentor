@@ -1,0 +1,94 @@
+/* 
+--- Layout ---
+Mobile: 375px | 667px
+Desktop: 1440px | 720px
+
+--- Typography ---
+Font size (name and stats): 18px
+
+---  Font ---
+Family: [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans)
+Weights: 400, 700
+ */
+
+:root {
+  /* ---  Primary --- */
+ --clr-Dark-cyan: hsl(185, 75%, 39%);
+ --clr-Very-dark-desaturated-blue: hsl(229, 23%, 23%);
+ --clr-Dark-grayish-blue: hsl(227, 10%, 46%);
+ /* ---  Neutral --- */
+ --clr-Dark-gray: hsl(0, 0%, 59%);
+ --Dark-gray: 0, 0%, 59%;
+
+  /* Fonts */
+  --f-KumbhSans: 'Kumbh Sans', sans-serif;
+  --f-400: 400 18px var(--f-KumbhSans);
+  --f-700: 700 18px var(--f-KumbhSans);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font: 18px 'Kumbh Sans', sans-serif;
+  color: var(--clr-Very-dark-desaturated-blue);
+  padding-inline: 1.55rem 1.52rem;
+  display: grid;
+  place-content: center;
+  background:
+    url('../images/bg-pattern-top.svg') no-repeat right 52vw bottom 35vh,
+    url('../images/bg-pattern-bottom.svg') no-repeat left 48vw top 52vh,
+    var(--clr-Dark-cyan) 
+}
+main {
+  width: min(350px, calc(100dvw - 3rem));
+  background-color: #fff;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 13px;
+  background: #fff url('../images/bg-pattern-card.svg') no-repeat top center;
+  box-shadow: 0px 24px 20px 8px rgba(0, 0, 0, .1);
+}
+.profile {
+  padding-top: 5.4rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid hsla(var(--Dark-gray), .2);
+}
+.profile img {
+  margin-inline: auto;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  margin-bottom: 1.2rem;
+}
+.profile h1 {
+  font: var(--f-700);
+  margin-bottom: 0.5rem;
+}
+.profile h1 span {
+  margin-left: 0.5em;
+  font: var(--f-400);
+  color: var(--clr-Dark-gray);
+}
+.profile p {
+  font: 0.8em var(--f-KumbhSans);
+  color: var(--clr-Dark-gray);
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.1rem;
+  letter-spacing: 0.5px;
+  padding-block: 1.35em 1.3em;
+  padding-inline: 2.7rem;
+}
+.stats div {
+  display: grid;
+  gap: 0.25rem;
+  font-size: 18px;
+  font-weight: bold;
+}
+.stats p {
+  font: 10px var(--f-KumbhSans);
+  letter-spacing: 1.6px;
+  color: var(--clr-Dark-gray)
+}
+

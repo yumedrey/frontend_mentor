@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <title>Frontend Mentor | Interactive card details form</title>
+    <link rel="stylesheet" href="./assets/css/unset.css">
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <script src="./assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <main class="">
+      <h1 style="display: none;">Card Details Form</h1>
+      <figure class="card">
+        <div class="card__front">
+
+          <img class="card__front__logo" src="./assets/images/card-logo.svg" alt="card-logo">
+          <span class="card__number">0000 0000 0000 0000</span>
+          <div class="card__info">
+            <p class="card__info__name">Jane Appleseed</p>
+            <div class="card__info__date">
+              <span class="card-mm">00</span>/<span class="card-yy">00</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="card__back">
+          <span class="card__back__cvc">000</span>
+        </div>
+      </figure>
+
+      <form method="get" class="form">
+        <label for="form-name">
+          Cardholder Name
+          <input id="form-name" type="text" name="form-name" placeholder="e.g. Jane Appleseed" maxlength="50">
+          <span class="label__err">Wrong format, alphabetical only</span>
+          <span class="label__empty">Can't be blank</span>
+        </label>
+        <label for="form-number">
+          Card Number
+          <input id="form-number" type="text" name="form-number" placeholder="e.g. 1234 5678 9123 0000" maxlength="19">
+          <span class="label__err">Wrong format, numbers only</span>
+          <span class="label__empty">Can't be blank</span>
+        </label>
+        <div class="form__lower">
+          <label for="form-mm">
+            <span class="form__mmyy__header">Exp. Date (MM/YY)</span>
+            <input id="form-mm" type="text" name="form-mm" placeholder="MM" maxlength="2">
+            <input id="form-yy" type="text" name="form-mm" placeholder="YY" maxlength="2">
+            <span class="label__err">Wrong format, numbers only</span>
+            <span class="label__empty">Can't be blank</span>
+          </label>
+          <label for="form-cvc">
+            cvc
+            <input id="form-cvc" type="text" name="form-cvc" placeholder="e.g. 123" maxlength="3">
+            <span class="label__err">Wrong format, numbers only</span>
+            <span class="label__empty">Can't be blank</span>
+          </label>
+        </div>
+        <button type="submit">Confirm</button>
+      </form>
+
+      <div class="completed">
+        <img src="./assets/images/icon-complete.svg" alt="icon-complete">
+        <h1>Thank you!</h1>
+        <p>We've added your card details</p>
+        <button type="button" id="back-home-btn">Continue</button>
+      </div>
+
+    </main>
+  </body>
+</html>

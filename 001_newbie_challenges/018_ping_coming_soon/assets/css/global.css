@@ -1,0 +1,175 @@
+/* 
+--- Layout ---
+- Mobile: 375px
+- Desktop: 1440px
+
+--- Typography ---
+Font size: 20px
+Family: [Libre Franklin](https://fonts.google.com/specimen/Libre+Franklin)
+Weights: 300, 600, 700
+
+--- Icons ---
+[Font Awesome](https://fontawesome.com)
+[IcoMoon](https://icomoon.io)
+[Ionicons](https://ionicons.com)
+*/
+
+:root {
+  /* --- Primary --- */
+  --clr-Blue: hsl(223, 87%, 63%);
+  /* --- Secondary --- */
+  --clr-Pale-Blue: hsl(223, 100%, 88%);
+  --clr-Light-Red: hsl(354, 100%, 66%);
+  /* --- Neutral --- */
+  --clr-Gray: hsl(0, 0%, 59%);
+  --clr-Very-Dark-Blue: hsl(209, 33%, 12%)
+  }
+
+body {
+  font-family: 'Libre Franklin', sans-serif;
+  padding: 5.3rem 1.75rem;
+  text-align: center;
+}
+
+header {
+  margin-bottom: 2.4rem;
+}
+header img {
+  margin-inline: auto;
+  max-width: 3.3rem;
+}
+main {
+  margin-bottom: 7.35rem;
+}
+main h1 {
+  font-size: 1.38rem;
+  margin-bottom: 1.1rem;
+  color: var(--clr-Gray)
+}
+main em {
+  font-weight: 700;
+  color: #000;
+}
+main p {
+  font-size: 0.75rem;
+  margin-bottom: 2.0rem;
+}
+form {
+  padding-inline: 1.25rem;
+  font-size: 0.75rem;
+  margin-bottom: 4.3rem;
+  position: relative;
+}
+.err-msg {
+  position: absolute;
+  bottom: -1.4rem;
+  left: 3.1rem;
+  font-style: italic;
+  font-size: 0.774rem;
+  color: var(--clr-Light-Red);
+  display: none;
+}
+form.hold .err-msg {
+  display: block;
+}
+
+form input {
+  width: 100%;
+  border-radius: 2em;
+  padding: 1em 2.7em;
+  margin-bottom: 1em;
+  border: 1px solid var(--clr-Pale-Blue);
+  color: var(--clr-Very-Dark-Blue)
+}
+form input::placeholder {
+  color: var(--clr-Pale-Blue);
+}
+form.hold input {
+  border-color: var(--clr-Light-Red);
+}
+[type='submit'] {
+  background-color: red;
+  display: block;
+  width: 100%;
+  border-radius: 2em;
+  font-weight: 600;
+  background-color: var(--clr-Blue);
+  color: #fff;
+  padding-block: 0.9em;
+  cursor: pointer;
+}
+ [type='submit']:hover {
+  opacity: .8;
+}
+.social-media {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-bottom: 1.4rem;
+} 
+.social-media i {
+  color: var(--clr-Blue);
+  font-size: 0.9rem;
+  border-radius: 50%;
+  width: 1.9rem;
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+  border: 1px solid hsla(0, 0%, 59%, .1);
+  cursor: pointer;
+}
+.social-media i:hover {
+  background-color: var(--clr-Blue);
+  color: #fff;
+}
+.copy {
+  font-size: 0.625rem;
+}
+
+
+@media (width > 720px) {
+  body {
+    padding: 5.4rem 1.75rem;
+    display: grid;
+    place-content: center;
+  }
+  header {
+    margin-bottom: 2.9rem;
+  }
+  header img {
+    max-width: none;
+  }
+  main h1 {
+    font-size: 3.01rem;
+  }
+  main p {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+  main {
+    max-width: 42.2rem;
+    margin-bottom: 4.5rem;
+  }
+  .hero {
+    padding-inline: 1.1rem;
+  }
+  form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 5.35rem;
+  }
+  form input {
+    font-size: 1rem;
+    padding: 1.1em 1.8em;
+    margin: 0;
+  }
+  [type='submit'] {
+    max-width: 12.4rem;
+    font-size: 1rem;
+  }
+  .copy {
+    font-size: 0.75rem;
+    color: var(--clr-Gray);
+  }
+  
+}

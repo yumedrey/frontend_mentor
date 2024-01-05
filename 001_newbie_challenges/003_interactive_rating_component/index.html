@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link href="css/unset.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
+    <title>Frontend Mentor | Interactive rating component</title>
+  </head>
+  <body>
+    <main>
+      <div class="main--star-icon">
+        <img src="./assets/images/icon-star.svg" alt="star">
+        <span class="main--result">You selected <span id="result-star"></span> out of 5</span>
+      </div>
+      <h1>How did we do?</h1>
+      <p>
+        Please let us know how we did with your support request.
+        All feedback is appreciated to help us improve our offering!
+      </p>
+      <form>
+        <div class="form--input">
+          <input id="star1" type="radio" name="star_input" value="1">
+          <label for="star1">1</label>
+
+          <input id="star2" type="radio" name="star_input" value="2">
+          <label for="star2">2</label>
+
+          <input id="star3" type="radio" name="star_input" value="3">
+          <label for="star3">3</label>
+
+          <input id="star4" type="radio" name="star_input" value="4">
+          <label for="star4">4</label>
+
+          <input id="star5" type="radio" name="star_input" value="5">
+          <label for="star5">5</label>
+        </div>
+
+        <div class="form--submit">
+          <button id="btn-submit" type="submit">SUBMIT</button>
+        </div>
+
+      </form>
+    </main>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

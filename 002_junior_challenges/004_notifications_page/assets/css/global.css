@@ -1,0 +1,195 @@
+/* 
+--- Layout ---
+Mobile: 375px
+Desktop: 1440px
+
+--- Typography ---
+Font size (paragraph): 16px
+Family: [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans)
+Weights: 500, 800
+ */
+
+:root {
+  /* --- Primary --- */
+  --clr-Red: hsl(1, 90%, 64%);
+  --clr-Blue: hsl(219, 85%, 26%);
+  /* --- Neutral --- */
+  --clr-White: hsl(0, 0%, 100%);
+  --clr-Very-light-grayish-blue: hsl(210, 60%, 98%);
+  --clr-Light-grayish-blue-1: hsl(211, 68%, 94%);
+  --clr-Light-grayish-blue-2: hsl(205, 33%, 90%);
+  --clr-Grayish-blue: hsl(219, 14%, 63%);
+  --clr-Dark-grayish-blue: hsl(219, 12%, 42%);
+  --clr-Very-dark-blue: hsl(224, 21%, 14%);
+}
+@font-face {
+  font-family: 'plusJakarta-medium';
+  src: url('../fonts/static/PlusJakartaSans-Medium.ttf');
+}
+@font-face {
+  font-family: 'plusJakarta-extrabold';
+  src: url('../fonts/static/PlusJakartaSans-ExtraBold.ttf');
+}
+body {
+  padding: 1.5rem 1rem;
+  font: 1rem 'plusJakarta-medium';
+  display: grid;
+  min-height: 100vh;
+}
+main {
+  max-width: 45.5rem;
+  background-color: #fff;
+  box-shadow: 0px 5px 21px 0px rgba(0, 0, 0, .05);
+  border-radius: 1rem;
+}
+
+.header {
+  display: flex;
+  gap: 0.55rem;
+  margin-bottom: 1.5rem;
+}
+h1 {
+  font: 1.25rem 'plusJakarta-extrabold';
+}
+#total-unread {
+  padding: 0.1em 0.7em 0.15em;
+  background-color: var(--clr-Blue);
+  align-self: flex-start;
+  border-radius: 0.4em;
+  color: var(--clr-White);
+  font: 1rem 'plusJakarta-extrabold';
+}
+#markread {
+  margin-left: auto;
+  font-size: 0.875rem;
+  color: var(--clr-Dark-grayish-blue);
+  cursor: pointer;
+}
+.hello {
+  margin-bottom: 0.6rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 0.7rem;
+  padding: 1rem;
+  padding-right: 0.75rem
+}
+main .hello:hover {
+  background-color: var(--clr-Light-grayish-blue-2);
+  cursor: pointer;
+}
+.hello > img:first-child {
+  grid-row: span 2;
+  max-width: 2.5rem;
+}
+.hello.unread {
+  background-color: var(--clr-Very-light-grayish-blue);
+}
+.value {
+  grid-row: 2 / 3;
+  grid-column: 2;
+  padding: 0.8rem 1rem 1rem;
+  margin-top: 1rem;
+  font-size: 0.89rem;
+  border: 1px solid var(--clr-Light-grayish-blue-2);
+  color: var(--clr-Dark-grayish-blue)
+}
+.text--content {
+  line-height: 1;
+}
+.text--content h2 {
+  font: 0.85rem 'plusJakarta-extrabold';
+  color: var(--clr-Very-dark-blue)
+}
+.text--content p {
+  font-size: 0.88rem;
+  color: var(--clr-Dark-grayish-blue)
+}
+.text--content span {
+  font: 0.87rem 'plusJakarta-extrabold';
+  color: var(--clr-Dark-grayish-blue)
+}
+.text--content .group {
+  color: var(--clr-Blue)
+}
+.text--time {
+  font-size: 0.88rem;
+  color: var(--clr-Grayish-blue)
+}
+.comment-img {
+  max-width: 2.5rem;
+}
+
+.text--content > * {
+  display: inline;
+  margin-right: 0.5em;
+}
+.hello.unread .text--content::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  aspect-ratio: 1;
+  background-color: var(--clr-Red);
+  border-radius: 50%;
+}
+
+@media (width > 800px) {
+  body {
+    background-color: var(--clr-Very-light-grayish-blue);
+    place-content: center;
+  }
+  main {
+    padding: 2.1rem 1.9rem 0rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  .header {
+    column-gap: 0.8rem;
+  }
+  #markread {
+    font-size: 1rem;
+  }
+  #total-unread {
+    align-self: center;
+  }
+  .header {
+    margin-bottom: 2.0rem;
+  }
+  .hello {
+    column-gap: 1.15rem;
+    margin-bottom: 0.48rem;
+    padding: 1.07rem 1.15rem;
+    padding-right: 0;
+  }
+  .hello > img:first-child {
+    max-width: 2.85rem;
+  }
+  .text--content {
+    margin-bottom: 0.1rem;
+    line-height: 1.4;
+  }
+  .text--content h2 {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+  }
+  .text--content p {
+    font-size: 1rem;
+    margin-right: 0.4rem;
+  }
+  .text--content span {
+    font-size: 1.0rem;
+  }
+  .text--time {
+    font-size: 1rem;
+  }
+  .value {
+    margin-top: 0.8rem;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+    padding: 1rem 1.2rem;
+  }
+  .comment-img {
+    max-width: 2.8rem;
+    margin-right: 1.15rem;
+  }
+}

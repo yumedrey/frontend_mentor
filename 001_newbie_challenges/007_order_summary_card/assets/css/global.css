@@ -1,0 +1,167 @@
+/*
+Mobile: 375px
+Desktop: 1440px
+
+Font size (paragraph): 16px
+Family: [Red Hat Display](https://fonts.google.com/specimen/Red+Hat+Display)
+Weights: 500, 700, 900
+*/
+
+:root {
+  --clr-Pale-blue: hsl(225, 100%, 94%);
+  --clr-Bright-blue: hsl(245, 75%, 52%);
+  --clr-Very-pale-blue: hsl(225, 100%, 98%);
+  --clr-Desaturated-blue: hsl(224, 23%, 55%);
+  --clr-Dark-blue: hsl(223, 47%, 23%);
+}
+@font-face {
+  font-family: RedHat;
+  src: url('../fonts/RedHatDisplay-VariableFont_wght.ttf')
+}
+
+body {
+  padding: 1.5rem;
+  height: 100vh;
+  font-family: RedHat;
+  display: grid;
+  place-content: center;
+  background-color: var(--clr-Pale-blue);
+  background-image: url('../images/pattern-background-mobile.svg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+main {
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: center;
+  max-width: 450px;
+  box-shadow: 0px 25px 24px 2px hsl(245, 58%, 43%, 0.1);
+}
+main picture {
+}
+main picture img {
+}
+.content {
+  padding-block: 32px 16px;
+  padding-inline: 1.5rem;
+}
+.content h1 {
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 16px;
+  color: var(--clr-Dark-blue);
+}
+.content p {
+  line-height: 1.57;
+  letter-spacing: -0.47px;
+  font-weight: 500;
+  color: var(--clr-Desaturated-blue);
+  margin-bottom: 24px;
+  padding-inline: 1rem;
+}
+.content--pricing {
+  padding-inline: 1rem;
+  padding-block: 17px 16px;
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  font-size: 14px;
+  background-color: var(--clr-Very-pale-blue);
+}
+.content--pricing h2 {
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 4px;
+  color: var(--clr-Dark-blue);
+}
+.content--pricing span {
+  font-weight: 500;
+  color: var(--clr-Desaturated-blue);
+}
+.content--pricing a {
+  margin-left: auto;
+  letter-spacing: 0.3px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 1px;
+  color: var(--clr-Bright-blue);
+}
+.content--pricing a:hover {
+  color: #766cf1;
+  text-decoration: none;
+}
+
+.main--button {
+  display: grid;
+  padding-block: 8px;
+  padding-inline: 1.5rem;
+  background-color: white;
+  gap: 9px;
+}
+.main--button button {
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.main--button__proceed {
+  background-color: var(--clr-Bright-blue);
+  padding-block: 15px;
+  color: var(--clr-Very-pale-blue);
+  border-radius: 10px;
+  box-shadow: 0px 19px 21px 0px hsl(245, 75%, 52%, .2);
+}
+.main--button__proceed:hover {
+  background-color: #766cf1;
+}
+.main--button__cancel {
+  padding-block: 15px 24px;
+  color: var(--clr-Desaturated-blue);
+}
+.main--button__cancel:hover {
+  color: var(--clr-Dark-blue);
+}
+
+@media (min-width: 600px) {
+  body {
+    background-image: url('../images/pattern-background-desktop.svg');
+  }
+  .content {
+    padding-top: 45px;
+    padding-inline: 3.0rem;
+  }
+  .content h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  .content p {
+    /* padding-inline: 2rem; */
+    letter-spacing: -0.50px;
+    font-size: 17px;
+    line-height: 1.53;
+    margin-bottom: 20px;
+  }
+  .content--pricing {
+    padding-block: 25px 26px;
+    font-size: 16px;
+    padding-inline:1.5rem;
+  }
+  .content--pricing h2 {
+    margin-bottom: 7px;
+  }
+  .content--pricing a {
+    letter-spacing: 0.4px;
+    font-weight: 700;
+    margin-bottom: 1px;
+    font-size: 14px;
+  }
+  .main--button {
+    padding-inline: 3.0rem;
+    padding-block: 16px 23px;
+    gap: 17px;
+  }
+}

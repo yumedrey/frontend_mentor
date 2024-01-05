@@ -1,0 +1,215 @@
+/*
+--- Layout ---
+Mobile: 375px
+Desktop: 1440px
+--- Typography ---
+Family: [Roboto](https://fonts.google.com/specimen/Roboto)
+Font size (paragraph): 16px
+Weights: 400, 700
+*/
+@font-face {
+  font-family: 'RobotoRegular';
+  src: url('../fonts/Roboto-Regular.ttf');
+}
+@font-face {
+  font-family: 'RobotoBold';
+  src: url('../fonts/Roboto-Bold.ttf');
+}
+
+:root {
+  /* --- Primary --- */
+  --clr-Tomato: hsl(4, 100%, 67%);
+  /* --- Neutral --- */
+  --clr-Dark-Slate-Grey: hsl(234, 29%, 20%);
+  --clr-Charcoal-Grey: hsl(235, 18%, 26%);
+  --clr-Grey: hsl(231, 7%, 60%);
+  --clr-White: hsl(0, 0%, 100%);
+  /* --- Fonts --- */
+  --f-normal: 'RobotoRegular';
+  --f-bold: 'RobotoBold';
+
+}
+
+body {
+  font-family: 'RobotoRegular', sans-serif;
+  background-color: var(--clr-Charcoal-Grey);
+}
+
+.signup--wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-White);
+}
+main.done .signup--wrapper {
+  display: none;
+}
+.hero img {
+  transition: .5s;
+}
+.hero.on img {
+  background-image: linear-gradient(to bottom, hsl(-14, 100%, 66%), var(--clr-Tomato));
+}
+
+.signup {
+  padding: 2.25rem 1.5rem;
+}
+main {
+  background-color: var(--clr-White);
+}
+main h1 {
+  font-size: 2.5rem;
+  font-family: var(--f-bold);
+  margin-bottom: 1.2rem;
+  color: var(--clr-Charcoal-Grey);
+}
+main p {
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--clr-Charcoal-Grey);
+}
+.signup ul {
+  list-style: none;
+  margin-bottom: 2.55rem;
+}
+.signup li {
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.65rem;
+  color: var(--clr-Charcoal-Grey);
+}
+.signup li img {
+  margin-top: 2px;
+}
+
+form {
+  display: grid;
+}
+.form--label {
+  display: flex;
+}
+.form--label {
+  font: 0.75rem var(--f-bold);
+}
+.form--label .err-msg {
+  margin-left: auto;
+  color: var(--clr-Tomato);
+  display: none;
+}
+form.hold .form--label .err-msg {
+  display: block;
+}
+form input {
+  padding: 1.05rem 1.45rem 1.15rem;
+  border: 1px solid hsl(0, 0%, 78%);
+  color: var(--clr-Charcoal-Grey);
+  border-radius: 0.55rem;
+  margin-bottom: 1.5rem;
+}
+form.hold input {
+  border-color: var(--clr-Tomato);
+  background-color: hsla(4, 100%, 67%, .2);
+  color: var(--clr-Tomato);
+}
+form input:focus {
+  border: 1px solid var(--clr-Charcoal-Grey);
+}
+main button {
+  background: red;
+  padding-block: 1.25rem 1.1rem;
+  font-family: var(--f-bold);
+  border-radius: 0.5rem;
+  background-color: var(--clr-Dark-Slate-Grey);
+  color: var(--clr-White);
+  cursor: pointer;
+}
+main button:hover {
+  background-image: linear-gradient(to right, hsl(-14, 100%, 66%), var(--clr-Tomato));
+}
+
+main:not(.done) .complete--wrapper {
+  display: none;
+}
+.complete--wrapper {
+  display: grid;
+  height: 100vh;
+  padding-inline: 1.5rem;
+  grid-template-rows: 1fr auto;
+  max-width: 504px;
+  max-height: 520px;
+}
+.complete {
+  display: grid;
+  place-content: center;
+  padding-bottom: 4.7rem;
+}
+.complete > img {
+  margin-bottom: 2.5rem;
+}
+.complete h1 {
+  line-height: 1;
+  margin-bottom: 1.4rem;
+}
+.complete p {
+  font-size: 0.98rem;
+}
+.complete b {
+  font-weight: bold;
+}
+.complete--wrapper button {
+  margin-bottom: 3.45rem;
+  padding-block: 1.25rem 1.05rem;
+  background-color: red;
+  border-radius: 0.5rem;
+  font-family: var(--f-bold);
+  color: var(--clr-White);
+  background-color: var(--clr-Dark-Slate-Grey);
+}
+
+
+@media (width > 600px) {
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    
+  }
+  main {
+    border-radius: 2.1rem;
+  }
+  .signup--wrapper {
+    flex-direction: row-reverse;
+    background-color: var(--clr-White);
+    gap: 1rem;
+    max-width: 928px;
+    border-radius: 2.3rem;
+  }
+  main picture {
+    padding: 24px;
+  }
+  .signup {
+    padding-block: 5.8rem;
+    padding-inline: 4rem 1.5rem;
+    flex: 1;
+  }
+  .signup h1 {
+    font-size: 3.5rem;
+  }
+  .signup ul {
+    margin-bottom: 2.5rem;
+  }
+  form label {
+    margin-bottom: 0.6rem;
+  }
+  .complete--wrapper {
+    padding: 3rem 4rem;
+  }
+  .complete {
+    padding: 0;
+    margin-bottom: 1.1rem;
+  }
+  .complete h1 {
+    font-size: 3.5rem;
+  }
+}

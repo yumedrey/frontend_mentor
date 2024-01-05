@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <title>Frontend Mentor | Age calculator app</title>
+    <link rel="stylesheet" href="./assets/css/unset.css">
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <script src="./assets/js/main.js" defer></script>
+  </head>
+  <body>
+
+    <main>
+      <div class="form--wrapper">
+        <form>
+          <label for="day">
+            <span>DAY</span>
+            <input
+              id="day" name="day" placeholder="DD"
+              type="text" inputmode="numeric"
+              pattern="[0-9]+" value=""
+            >
+            <span class="input--empty">This field is required</span>
+            <span class="input--invalid">Must be a valid day</span>
+          </label>
+          <label for="month">
+            <span>MONTH</span>
+            <input
+              id="month" name="month" placeholder="MM"
+              type="text" inputmode="numeric"
+              pattern="[0-9]+" value=""
+            >
+            <span class="input--empty">This field is required</span>
+            <span class="input--invalid">Must be a valid month</span>
+          </label>
+          <label for="year">
+            <span>YEAR</span>
+            <input
+              id="year" name="year" placeholder="YYYY"
+              type="text" inputmode="numeric"
+              pattern="[0-9]+" value=""
+            >
+            <span class="input--empty">This field is required</span>
+            <span class="input--invalid">Must be in the past</span>
+          </label>
+          <button type="submit" aria-label="submit">
+            <img src="./assets/images/icon-arrow.svg" alt="">
+          </button>
+        </form>
+      </div>
+
+      <div class="result">
+        <h1>
+          <span class="result--years">- -</span>
+          <span>years</span>
+        </h1>
+        <h1>
+          <span class="result--month">- -</span>
+          <span>months</span>
+        </h1>
+        <h1>
+          <span class="result--days">- -</span>
+          <span>days</span>
+        </h1>
+      </div>
+    </main>
+
+  </body>
+</html>

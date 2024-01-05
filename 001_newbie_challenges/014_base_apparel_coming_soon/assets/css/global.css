@@ -1,0 +1,179 @@
+/* 
+--- Layout ---
+
+Mobile: 375px
+Desktop: 1440px
+
+--- Typography ---
+Font size: 16px
+Family: [Josefin Sans](https://fonts.google.com/specimen/Josefin+Sans)
+Weights: 300, 400, 600
+ */
+:root {
+
+  /* --- Primary --- */
+  --clr-Desaturated-Red: hsl(0, 36%, 70%);
+  --clr-Soft-Red: hsl(0, 93%, 68%);
+  /* --- Neutral --- */
+  --clr-Dark-Grayish-Red: hsl(0, 6%, 24%);
+
+  /* --- Gradients 135deg --- */
+  /* --Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%) */
+  /* --Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%) */
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  font-family: 'Josefin Sans', sans-serif;
+  background:
+    url('../images/bg-pattern-desktop.svg') top left no-repeat,
+    linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  background-size: cover;
+  display: grid;
+  place-content: center;
+}
+
+.header {
+  padding: 1.95rem 2.0rem 2rem;
+}
+.header img {
+  max-width: 100px;
+}
+
+.content {
+  text-align: center;
+  padding: 4.05rem 2rem;
+}
+.content h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-inline: auto;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 11px;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+  color: var(--clr-Dark-Grayish-Red);
+}
+.content span {
+  font-weight: 300;
+  letter-spacing: 0.68rem;
+  line-height: 1.02;
+  display: block;
+  color: var(--clr-Desaturated-Red)
+}
+.content p {
+  line-height: 1.55;
+  font-size: 0.88rem;
+  margin-bottom: 2.05rem;
+  color: var(--clr-Desaturated-Red);
+}
+.content form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.content input {
+  font-size: 0.875rem;
+  padding: 0.85rem 1.42rem;
+  border: 1px solid hsl(-4, 19%, 84%);
+  border-radius: 2em;
+  width: 100%;
+}
+.content input::placeholder {
+  color: hsl(-4, 19%, 84%);
+  opacity: 1;
+}
+.content .mark {
+  position: absolute;
+  width: 1.5rem;
+  aspect-ratio: 1;
+  background-color: var(--clr-Soft-Red);
+  display: none;
+  place-items: end center;
+  font-weight: bold;
+  color: #fff;
+  right: 7.25rem;
+  border-radius: 50%;
+  margin-top: 2px;
+}
+.content .error-msg {
+  position: absolute;
+  color: var(--clr-Soft-Red);
+  bottom: -1.6rem;
+  left: 2rem;
+  font-size: 0.815rem;
+  display: none;
+}
+form.hold .error-msg {
+  display: block;
+}
+form.hold input {
+  border: 2px solid var(--clr-Soft-Red);
+}
+form.hold .mark {
+  display: grid;
+}
+[type='submit'] {
+  position: absolute;
+  display: block;
+  inset: 0 0 0 auto;
+  padding-inline: 1.7rem 1.55rem;
+  border-radius: 2em;
+  background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  cursor: pointer;
+}
+[type='submit']:hover {
+  background: hsl(-1, 79%, 89%);
+  box-shadow: 0px 12px 29px 0px hsl(0, 74%, 74%, .7);
+}
+
+
+@media (width > 720px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto 1fr;
+    max-width: 1440px;
+  }
+  .hero {
+    grid-row: span 2;
+  }
+  .header {
+    padding: 4.1rem 10.3rem;
+  }
+  .header img {
+    max-width: none;
+  }
+  .content {
+    text-align: left;
+    padding: 4.3rem 13.75rem 4.3rem 10.3rem;
+  }
+  .content h1 {
+    font-size: 4rem;
+    letter-spacing: 17px;
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+  }
+  .content span {
+    letter-spacing: 17px;
+  }
+  .content p {
+    font-size: 1.01rem;
+    max-width: 44ch;
+    line-height: 1.72;
+    padding-inline: 1px;
+    margin-bottom: 2.5rem;
+  }
+  .content input {
+    font-size: 1rem;
+    padding: 1.2em 1.95rem 1rem;
+  }
+  [type='submit'] {
+    padding-inline: 2.8rem 2.7rem;
+  }
+}
+
+
+

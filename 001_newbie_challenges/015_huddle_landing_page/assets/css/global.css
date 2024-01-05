@@ -1,0 +1,152 @@
+/* 
+---Layout ---
+Mobile: 375px
+Desktop: 1440px
+
+--Typography ---
+
+---Headings ---
+Family: [Poppins](https://fonts.google.com/specimen/Poppins)
+Weights: 400, 600
+---Body ---
+Family: [Open Sans](https://fonts.google.com/specimen/Open+Sans)
+Weights: 400
+
+---Icons ---
+[Font Awesome](https://fontawesome.com/)
+[IcoMoon](https://icomoon.io/)
+ */
+
+:root {
+  --clr-Violet: hsl(257, 40%, 49%);
+  --clr-Soft-Magenta: hsl(300, 69%, 71%);
+
+}
+body {
+  width: 100vw;
+  min-height: 100vh;
+  /* font-family: 'Open Sans', sans-serif; */
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--clr-Violet);
+  background-image: url('../images/bg-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+header {
+  padding: 1.969rem 2.1rem;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+header img {
+  max-width: 129px;
+}
+main {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 2.3rem;
+  text-align: center;
+  display: grid;
+  row-gap: 3.7rem;
+  padding-block: 1.8rem;
+  color: #fff;
+}
+.hero {
+}
+.content h1 {
+  font: 600 1.485rem 'Poppins', sans-serif;
+  margin-bottom: 0.6em;
+}
+.content p {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+  margin-bottom: 1.5em;
+}
+.content a {
+  display: block;
+  font-size: 0.74rem;
+  padding-block: 1em 0.8em;
+  max-width: 17em;
+  margin-inline: auto;
+  border-radius: 2em;
+  background-color: #fff;
+  color: var(--clr-Violet);
+  box-shadow: 0px 8px 8px 4px rgba(0, 0, 0, .2);
+}
+.content a:hover {
+  background-color: var(--clr-Soft-Magenta);
+  color: #fff;
+}
+
+footer {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-block: 2.25rem 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.65rem;
+  font-size: 0.75rem;
+  color: #fff;
+}
+footer i.fa-brands {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  width: 2.3em;
+  aspect-ratio: 1;
+  cursor: pointer;
+}
+footer i.fa-brands:hover {
+  color: var(--clr-Soft-Magenta);
+  border-color: var(--clr-Soft-Magenta);
+}
+
+@media (width > 720px) {
+  body {
+    background-image: url('../images/bg-desktop.svg');
+  }
+  header {
+    padding: 3.345rem 4.4rem;
+    margin-bottom: 2.05rem;
+  }
+  header img {
+    max-width: 13.4rem;
+  }
+  main {
+    padding-inline: 4.55rem;
+    grid-template-columns: auto 1fr;
+    display: grid;
+    text-align: left;
+    column-gap: 3.3rem;
+    padding-block: 0;
+  }
+  .content {
+    padding-block: 2.65rem;
+  }
+  .content h1 {
+    font-size: 2.48rem;
+    margin-bottom: 1.2rem;
+  }
+  .content p {
+    font-size: 1.127rem;
+    padding-right: 1em;
+    margin-bottom: 1.5rem;
+  }
+  .content a {
+    display: inline-block;
+    font-size: 1.13rem;
+    padding: 0.75em 3.55em 0.9em;
+  }
+  footer {
+    padding: 0;
+    justify-content: flex-end;
+    padding: 1.3rem 5rem;
+    gap: 1rem;
+  }
+  footer i.fa-brands {
+    width: 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+

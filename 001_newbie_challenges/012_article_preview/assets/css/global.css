@@ -1,0 +1,192 @@
+/*
+ --- Layout ---
+
+  Mobile: 375px
+  Desktop: 1440px
+
+
+--- Typography ---
+
+--- Body Copy ---
+  Font size: 13px
+
+--- Headings ---
+  Family: [Manrope](https://fonts.google.com/specimen/Manrope)
+  Weights: 500, 700
+
+--- Icons ---
+  [Font Awesome](https://fontawesome.com)
+  [IcoMoon](https://icomoon.io)
+  [Ionicons](https://ionicons.com)
+*/
+:root {
+  --clr-Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+  --clr-Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+  --clr-Grayish-Blue: hsl(212, 23%, 69%);
+  --clr-Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+body {
+  width: 100vw;
+  padding-inline: 1.5rem;
+  font: 13px/1.5 'Manrope', sans-serif;
+  display: grid;
+  place-content: center;
+  background-color: var(--clr-Light-Grayish-Blue);
+}
+main {
+  max-width: 730px;
+  box-shadow: 0px 38px 38px 0px hsla(214, 17%, 51%, .1);
+  position: relative;
+}
+.article {
+  padding: 2.3rem 2rem 1.2rem;
+  background-color: #fff;
+}
+.article h1 {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  line-height: 1.5;
+  margin-bottom: 0.7rem;
+  color: var(--clr-Very-Dark-Grayish-Blue);
+}
+.article > p {
+  letter-spacing: 0.12px;
+  line-height: 1.55;
+  color: var(--clr-Desaturated-Dark-Blue);
+  margin-bottom: 2rem;
+}
+.profile {
+  display: flex;
+  column-gap: 1.04rem;
+  align-items: flex-start;
+}
+.profile p {
+  font-size: 0.75rem;
+  color: var(--clr-Desaturated-Dark-Blue);
+  letter-spacing: 0.65px;
+}
+.profile h2 {
+  letter-spacing: 0.08px;
+  font-weight: 700;
+  color: var(--clr-Very-Dark-Grayish-Blue);
+  margin-bottom: 0.17em;
+}
+.profile > img {
+  width: 2.5rem;
+  border-radius: 50%;
+}
+.profile button {
+  margin-left: auto;
+  margin-bottom: 1px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--clr-Light-Grayish-Blue);
+  aspect-ratio: 1;
+  align-self: center;
+  cursor: pointer;
+}
+.profile button svg path {
+  fill: #6E8098;
+}
+.profile.open button,
+.profile button:hover {
+  background-color: var(--clr-Desaturated-Dark-Blue);
+}
+.profile.open button svg path,
+.profile button:hover svg path {
+  fill: var(--clr-Light-Grayish-Blue);
+}
+.profile button img {
+  width: 1rem;
+  margin-left: auto;
+}
+.profile--share {
+  padding: 1.1rem 2.3rem;
+  position: absolute;
+  background-color: var(--clr-Very-Dark-Grayish-Blue);
+  align-items: center;
+  justify-content: center;
+  right: -4.25rem;
+  bottom: 6rem;
+  gap: 1.0rem;
+  display: none;
+}
+.profile.open .profile--share {
+  display: flex;
+}
+.profile--share span {
+  font-size: 0.75;
+  letter-spacing: 5.5px;
+  margin-right: 2px;
+  color: var(--clr-Grayish-Blue);
+}
+.profile--share i {
+  font-size: 1.25;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 899px) {
+  main {
+    overflow: hidden;
+    border-radius: 0.75rem;
+  }
+  .main--image img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    object-position: 0rem -1rem;
+  }
+  .article {
+    position: relative;
+  }
+  .profile--share {
+    inset: auto 0 0 0;
+    position: absolute;
+  }
+}
+@media (min-width: 900px) {
+  main {
+    display: grid;
+    grid-template-columns: 39% auto;
+  }
+  .main--image {
+    overflow: hidden;
+    border-top-left-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
+  }
+  .main--image img {
+    object-fit: cover;
+    height: 100%;
+    object-position: 0rem ;
+  }
+  .article {
+    padding: 2.0rem 2.5rem;
+    border-top-right-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+  }
+  .article h1 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    letter-spacing: 0.25px;
+    margin-bottom: 0.75rem;
+  }
+  .article > p {
+    margin-bottom: 1.25rem;
+  }
+  .profile--share {
+    border-radius: 0.6rem;
+  }
+  .profile--share::after {
+    position: absolute;
+    content: '';
+    border-top: 0.75rem solid var(--clr-Very-Dark-Grayish-Blue);
+    border-right: 0.75rem solid transparent;
+    border-left: 0.75rem solid transparent;
+    top: 100%;
+  }
+  .profile--share button {
+    display: none;
+  }
+}
